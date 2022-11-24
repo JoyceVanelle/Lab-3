@@ -27,5 +27,11 @@ namespace laboratoire_3
         {
             this.InitializeComponent();
         }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text , tbxNomEmployer.Text, tbxPrenomEmployer.Text);
+        }
     }
 }

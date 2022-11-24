@@ -23,7 +23,7 @@
                 <TextBlock x:Name="tblbudget" Text="le Budget doit etre entre 10,000$ et 100,000$" Visibility="Collapsed"/>
                 <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
-            
+
             <TextBlock x:Name="tblemployer" Text="Choississez un employer dans la Liste" FontSize="25" FontWeight="ExtraBold"  Margin="5,20,20,20"/>
             <ComboBox>
                 <ComboBox.ItemTemplate>
@@ -34,8 +34,6 @@
             </ComboBox>
 
         </StackPanel>
-        
-        
-        
+
     </Grid>
 </Page>

@@ -20,6 +20,7 @@
                 <TextBox x:Name="tbxNomEmployer" Header="Nom Employer:"/>
                 <TextBox x:Name="tbxPrenomEmployer" Header="Prénom de L'Employer:"/>
                 <TextBox x:Name="tbxmatricule" Header="Matricule:"/>
+                <Button x:Name="btn" Content="Ajouter Employer" Background="IndianRed" Click="btn_Click"/>
             </StackPanel>
 
         </StackPanel>

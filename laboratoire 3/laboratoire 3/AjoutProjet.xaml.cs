@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -31,11 +32,14 @@ namespace laboratoire_3
         private void btnvalider_Click(object sender, RoutedEventArgs e)
         {
             double budget = Double.Parse(tbxbudget.Text);
+            double number = Double.Parse(tbxNum.Text);  
 
             if(budget < 10000 && budget > 100000)
             {
                 tblbudget.Visibility = Visibility.Visible;
             }
+
+            
         }
     }
 }
