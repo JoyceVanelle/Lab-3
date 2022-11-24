@@ -12,7 +12,7 @@
 
         <StackPanel HorizontalAlignment="Center" Margin="20">
 
-            <TextBlock x:Name="titre" Text="Création d'un Employer" FontSize="25" Margin="0,0,0,15"/>
+            <TextBlock x:Name="titre  jhu" Text="Création d'un Employer" FontSize="25" Margin="0,0,0,15"/>
 
 
             <!-- Ajout Employer -->
