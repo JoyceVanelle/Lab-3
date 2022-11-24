@@ -25,10 +25,10 @@
             </StackPanel>
 
             <TextBlock x:Name="tblemployer" Text="Choississez un employer dans la Liste" FontSize="25" FontWeight="ExtraBold"  Margin="5,20,20,20"/>
-            <ComboBox>
+            <ComboBox x:Name="liste">
                 <ComboBox.ItemTemplate>
                     <DataTemplate x:DataType="local:Employe">
-                        <TextBlock Text="{x:Bind Matricule,Mode=OneWay}"/>
+                        <TextBlock x:Name="tbemplo" Text="{x:Bind Matricule,Mode=OneWay}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
