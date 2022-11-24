@@ -28,9 +28,36 @@ namespace laboratoire_3
             this.InitializeComponent();
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            myButton.Content = "Clicked";
+            var item = (NavigationViewItem)args.SelectedItem;
+
+            switch (item.Tag)
+            {
+                case "AjoutEmploye":
+                    mainFrame.Navigate(typeof(AjoutEmploye));
+                    break;
+                case "AjoutProjet":
+                    mainFrame.Navigate(typeof(AjoutProjet));
+                    break;
+                case "Projet":
+                    mainFrame.Navigate(typeof(AfficheRechercheProjet));
+                    break;
+                default:
+                    break;
+
+            }
+            try
+            {
+                tblHeader.Text = item.Content.ToString();
+            }
+            catch (Exception)
+            {
+                tblHeader.Text = "vide";
+
+            };
+
+
         }
     }
 }
