@@ -22,7 +22,7 @@
                 <TextBox x:Name="tbxbudget" Header="Budget:"/>
                 <TextBlock x:Name="tblbudget" Text="le Budget doit etre entre 10,000$ et 100,000$" Visibility="Collapsed"/>
             </StackPanel>
-            <TextBlock x:Name="tblemployer" Text="Choississez un employer"/>
+            <TextBlock x:Name="tblemployer" Text="Choississez un employer dans la Liste"/>
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:Employe">
