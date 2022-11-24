@@ -58,5 +58,36 @@ namespace laboratoire_3
 
         }
 
+        public void AjouterProjet(string numero, DateOnly date ,int budget,  string employe)
+        {
+
+            try
+            {
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
+                commande.CommandText = "insert into projet values( @numero, @date, @budget,@employe) ";
+
+                //commande.Parameters.AddWithValue("@id", id);
+                commande.Parameters.AddWithValue("@numero", numero);
+                commande.Parameters.AddWithValue("@date", date);
+                commande.Parameters.AddWithValue("@budget", budget);
+                commande.Parameters.AddWithValue("@employe", employe);
+
+                con.Open();
+                commande.Prepare();
+                int i = commande.ExecuteNonQuery();
+
+                con.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                con.Close();
+            }
+
+
+        }
+
     }
 }

@@ -60,10 +60,5 @@ namespace laboratoire_3
 
         }
 
-
-        private void btnAjouter_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }
