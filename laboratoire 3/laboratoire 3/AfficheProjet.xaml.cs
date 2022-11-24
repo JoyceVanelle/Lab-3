@@ -27,5 +27,15 @@ namespace laboratoire_3
         {
             this.InitializeComponent();
         }
+
+        private void btnvalider_Click(object sender, RoutedEventArgs e)
+        {
+            double budget = Double.Parse(tbxbudget.Text);
+
+            if(budget < 10000 && budget > 100000)
+            {
+                tblmsg.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

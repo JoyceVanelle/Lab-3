@@ -8,7 +8,21 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid Background="BlueViolet">
+
+        <StackPanel HorizontalAlignment="Center" Margin="20">
+
+            <TextBlock x:Name="titre" Text="Création d'un Employer" FontSize="25" Margin="0,0,0,15"/>
+
+
+            <!-- Ajout Employer -->
+            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="80,0,00,0">
+                <TextBox x:Name="tbxNomEmployer" Header="Nom Employer:"/>
+                <TextBox x:Name="tbxPrenomEmployer" Header="Prénom de L'Employer:"/>
+                <TextBox x:Name="tbxmatricule" Header="Matricule:"/>
+            </StackPanel>
+
+        </StackPanel>
 
     </Grid>
 </Page>
