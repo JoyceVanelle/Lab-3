@@ -7,7 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+
+    <NavigationView PaneTitle="Joyce Compagnie" PaneDisplayMode="Auto" IsSettingsVisible="False" 
+        IsBackButtonVisible="Visible"
+                    SelectionChanged="NavigationView_SelectionChanged">
+
+        <NavigationView.Header>
+            <TextBlock x:Name="tblHeader">Page d'accueil</TextBlock>
+        </NavigationView.Header>
+
+        <NavigationView.MenuItems>
+            <AutoSuggestBox Width="200"  PlaceholderText="Rechercher" QueryIcon="Find"></AutoSuggestBox>
+            <NavigationViewItemHeader Content="Menu"></NavigationViewItemHeader>
+
+            <NavigationViewItem Content="Ajout Employe" Tag="AjoutEmploye" Icon="AddFriend"/>
+            <NavigationViewItem Content="Ajout Projet" Tag="AjoutProjet" Icon="PhoneBook"/>
+
+            <NavigationViewItemSeparator />
+
+            <NavigationViewItem Content="Projet" Tag="Projet" Icon="PhoneBook"/>
+            <NavigationViewItem Content="Recherche" Tag="Recherche" Icon="Find"/>
+
+            <NavigationViewItemSeparator />
+
+        </NavigationView.MenuItems>
+
+        <NavigationView.PaneFooter>
+            <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
+        </NavigationView.PaneFooter>
+
+        <Frame x:Name="mainFrame"/>
+
+
+    </NavigationView>
 </Window>
