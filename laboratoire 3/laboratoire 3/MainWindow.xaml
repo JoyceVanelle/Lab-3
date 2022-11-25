@@ -10,7 +10,7 @@
 
     <NavigationView PaneTitle="Joyce Compagnie" PaneDisplayMode="Auto" IsSettingsVisible="False" 
         IsBackButtonVisible="Visible"
-                    SelectionChanged="NavigationView_SelectionChanged">
+                 SelectionChanged="NavigationView_SelectionChanged">
 
         <NavigationView.Header>
             <TextBlock x:Name="tblHeader">Page d'accueil</TextBlock>

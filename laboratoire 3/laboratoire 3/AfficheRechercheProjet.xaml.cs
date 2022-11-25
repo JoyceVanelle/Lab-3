@@ -26,6 +26,10 @@ namespace laboratoire_3
         public AfficheRechercheProjet()
         {
             this.InitializeComponent();
+            lvListe.ItemsSource = GestionBD.getInstance().GetProjet();
+
+
         }
+
     }
 }

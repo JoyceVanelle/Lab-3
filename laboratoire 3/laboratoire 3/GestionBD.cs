@@ -33,27 +33,37 @@ namespace laboratoire_3
         {
             try
             {
-                liste.Clear();// pour vider la liste
+               liste.Clear();// pour vider la liste
 
-                MySqlCommand commande = new MySqlCommand();
+                MySqlCommand commande = new MySqlCommand("AfficheNomComplet");
                 commande.Connection = con;// indique le chemin à commande 
-                commande.CommandText = "Select * from Projet";// ce qu,il faut aller chercher
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
+               
 
                 con.Open();// ouvre la connection 
                 MySqlDataReader r = commande.ExecuteReader();// permet de lire le retour qui ewst stocké dans r
-                r.Read();
+                
              //   public static bool TryParseExact(string? s, string? format, out DateOnly result);
 
                 while (r.Read())
                    
                 {
+                    DateOnly d = new DateOnly();
+                    DateTime dateTime = r.GetDateTime("debut");
+
+                    d.AddYears(dateTime.Year);
+                    d.AddMonths(dateTime.Month);
+                    d.AddDays(dateTime.Day);
+
                     liste.Add(new Projet()
                     {
                         Numero = r.GetString(0),
-                        Debut = (DateOnly)r["debut"],
+                        Debut = d,
                         Budget =r.GetInt32(2),
                         Description =r.GetString(3),
                         Employe = r.GetString(4),
+                        NomEmploye = r.GetString(5),
+                        PrenomEmploye = r.GetString(6),
 
                     });
 

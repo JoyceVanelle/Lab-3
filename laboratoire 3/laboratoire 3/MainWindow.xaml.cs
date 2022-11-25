@@ -57,7 +57,38 @@ namespace laboratoire_3
 
             };
 
-
         }
+
+        /*  private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+          {
+              var item = (NavigationViewItem)args.SelectedItem;
+
+              switch (item.Tag)
+              {
+                  case "AjoutEmploye":
+                      mainFrame.Navigate(typeof(AjoutEmploye));
+                      break;
+                  case "AjoutProjet":
+                      mainFrame.Navigate(typeof(AjoutProjet));
+                      break;
+                  case "Projet":
+                      mainFrame.Navigate(typeof(AfficheRechercheProjet));
+                      break;
+                  default:
+                      break;
+
+              }
+              try
+              {
+                  tblHeader.Text = item.Content.ToString();
+              }
+              catch (Exception)
+              {
+                  tblHeader.Text = "vide";
+
+              };
+
+
+          }*/
     }
 }

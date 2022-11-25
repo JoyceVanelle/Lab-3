@@ -9,10 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <GridView x:Name="liste"   >
+        <GridView x:Name="lvListe"   >
 
             <GridView.ItemTemplate>
-     
 
                 <DataTemplate x:DataType="local:Projet">
                     <Grid>
@@ -40,15 +39,16 @@
                             <TextBlock Text="prenom de l'employé: "  Margin="5,5,5,10">
 
                             </TextBlock>
-
-
                         </StackPanel>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Stretch">
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Stretch"  Margin="5">
                             <TextBlock Text="{x:Bind Numero,Mode=OneWay}" Margin="5,5,5,10"/>
                             <TextBlock Text="{x:Bind Debut}" Margin="5,5,5,10"/>
                             <TextBlock Text="{x:Bind Budget}" Margin="5,5,5,10"/>
                             <TextBlock Text="{x:Bind Description}" Margin="5,5,5,10"/>
-                           
+                            <TextBlock Text="{x:Bind NomEmploye}" Margin="5,5,5,10"/>
+                            <TextBlock Text="{x:Bind PrenomEmploye}" Margin="5,5,5,10"/>
+                          
+
 
                         </StackPanel>
 
