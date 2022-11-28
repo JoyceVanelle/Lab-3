@@ -33,13 +33,57 @@ namespace laboratoire_3
 
         private void btnvalider_Click(object sender, RoutedEventArgs e)
         {
-            double budget = Double.Parse(tbxbudget.Text);
-          
 
-              if(budget < 10000 || budget > 100000)
+            double budget = Double.Parse(tbxbudget.Text);
+
+
+            if (budget < 10000 || budget > 100000)
             {
                 tblbudget.Visibility = Visibility.Visible;
             }
+
+
+            if (tbxNum.Text.Trim() == "")
+            {
+
+
+                ErreurNum.Visibility = Visibility.Visible;
+
+            }
+
+            //if (tbxbudget.Text.Trim() == null)
+            //{
+
+
+            //    ErreurBudget.Visibility = Visibility.Visible;
+
+            //}
+
+            if (tbxdes.Text.Trim() == "")
+            {
+
+
+                Erreurdes.Visibility = Visibility.Visible;
+
+            }
+            //if (calendar.DataContext == null)
+            //{
+
+
+            //    ErreurCalendar.Visibility = Visibility.Visible;
+
+            //}
+
+            if (liste.Text.Trim() == "")
+            {
+
+
+                ErreurEmployer.Visibility = Visibility.Visible;
+
+            }
+
+
+           
 
             DateTime d = calendar.Date.Value.Date;
            calendar.MaxDate = new DateTimeOffset(new DateTime(2022, 12, 1));

@@ -10,18 +10,18 @@ namespace laboratoire_3
     {
         String numero;
         DateTime debut;
-        int budget;
+        double budget;
         String description;
         String employe;
         public Projet()
         {
             this.Numero = "";
             this.Debut = new DateTime();
-            this.Budget = 0;
+            this.Budget = 0.00;
             this.Description = "";
             this.Employe = "";
         }
-        public Projet(string numero, int _adebut, int _moisdebut, int _jourdebut, int budget, string description, string employe)
+        public Projet(string numero, int _adebut, int _moisdebut, int _jourdebut, double budget, string description, string employe)
         {
             this.Numero = numero;
             this.Debut = new DateTime(_adebut, _moisdebut, _jourdebut);
@@ -32,7 +32,7 @@ namespace laboratoire_3
 
         public string Numero { get => numero; set => numero = value; }
         public DateTime Debut { get => debut; set => debut = value; }
-        public int Budget { get => budget; set => budget = value; }
+        public double Budget { get => budget; set => budget = value; }
         public string Description { get => description; set => description = value; }
         public string Employe { get => employe; set => employe = value; }
 
