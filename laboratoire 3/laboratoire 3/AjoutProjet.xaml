@@ -18,10 +18,14 @@
             <!-- Ajout Employer -->
             <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0" Padding="15">
                 <TextBox x:Name="tbxNum" Header="Num Employer:"/>
+                <TextBlock  x:Name="ErreurNum" Text="Entrer le Num d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
+                <TextBlock  x:Name="ErreurCalendar" Text="Entrer une date"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="tbxbudget" Header="Budget:"/>
+                <TextBlock  x:Name="ErreurBudget" Text="Entrer un montant"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <TextBlock x:Name="tblbudget" Text="le Budget doit etre entre 10,000$ et 100,000$" Visibility="Collapsed"/>
                 <TextBox x:Name="tbxdes" Header="Description:"/>
+                <TextBlock  x:Name="Erreurdes" Text="Entrer une description du projet"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <ComboBox x:Name="liste" HorizontalAlignment="Stretch" Header="Choisissez un employé" Margin="0 5 0 5">
                     <ComboBox.ItemTemplate>
                         <DataTemplate x:DataType="local:Employe">
@@ -34,6 +38,7 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+                <TextBlock  x:Name="ErreurEmployer" Text="Veillez choisir une employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
 
                 <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
