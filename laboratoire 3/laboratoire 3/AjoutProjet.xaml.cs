@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -27,6 +28,7 @@ namespace laboratoire_3
         public AjoutProjet()
         {
             this.InitializeComponent();
+            liste.ItemsSource = GestionBD.getInstance().AffficheComboBox();
         }
 
         private void btnvalider_Click(object sender, RoutedEventArgs e)
@@ -34,12 +36,20 @@ namespace laboratoire_3
             double budget = Double.Parse(tbxbudget.Text);
           
 
-            if(budget < 10000 && budget > 100000)
+              if(budget < 10000 || budget > 100000)
             {
                 tblbudget.Visibility = Visibility.Visible;
             }
 
-            //GestionBD.getInstance().AjouterProjet();
+            DateTime d = calendar.Date.Value.Date;
+           calendar.MaxDate = new DateTimeOffset(new DateTime(2022, 12, 1));
+            calendar.MinDate = new DateTimeOffset(new DateTime(2021, 1, 1));
+
+            Employe emp = liste.SelectedItem as Employe;
+
+            GestionBD.getInstance().AjouterProjet(tbxNum.Text, d, budget,tbxdes.Text, emp.Matricule);
+
+          
         }
     }
 }

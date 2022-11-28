@@ -58,7 +58,7 @@ namespace laboratoire_3
 
         }
 
-        public void AjouterProjet(string numero, DateOnly date ,int budget,  string employe)
+        public void AjouterProjet(string numero, DateTime date ,double budget,string description,  string employe)
         {
 
             try
@@ -66,12 +66,13 @@ namespace laboratoire_3
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
                 /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
-                commande.CommandText = "insert into projet values( @numero, @date, @budget,@employe) ";
+                commande.CommandText = "insert into projet values( @numero, @date, @budget, @description ,@employe) ";
 
                 //commande.Parameters.AddWithValue("@id", id);
                 commande.Parameters.AddWithValue("@numero", numero);
                 commande.Parameters.AddWithValue("@date", date);
                 commande.Parameters.AddWithValue("@budget", budget);
+                commande.Parameters.AddWithValue("@description", description);
                 commande.Parameters.AddWithValue("@employe", employe);
 
                 con.Open();
@@ -86,6 +87,48 @@ namespace laboratoire_3
                 con.Close();
             }
 
+
+        }
+
+        public ObservableCollection<Employe> AffficheComboBox()
+        {
+            liste.Clear();
+            try
+            {
+
+                MySqlCommand commande = new MySqlCommand();
+                commande.Connection = con;
+                commande.CommandText = "select * from employe";
+               
+                con.Open();
+                MySqlDataReader r = commande.ExecuteReader();
+
+                while (r.Read())
+                {
+
+                    liste.Add(new Employe()
+                    {
+                        Matricule = r.GetString(0),
+                        Nom = r.GetString(1),
+                        Prenom = r.GetString(2),
+                       
+                    });
+
+
+
+                    //lvliste.Items. System.Threading.Thread.Sleep(100);Add(r["id"] + " " + r["nom"] + " "+ r["prenom"] + " " + r["email"]);
+                }
+
+                r.Close();
+                con.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            return liste;
 
         }
 

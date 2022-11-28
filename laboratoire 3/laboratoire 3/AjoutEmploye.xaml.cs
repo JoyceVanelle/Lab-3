@@ -30,7 +30,32 @@ namespace laboratoire_3
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (tbxNomEmployer.Text.Trim() == "")
+            {
+
+
+                ErreurEmployer.Visibility = Visibility.Visible;
+
+            }
+            if (tbxPrenomEmployer.Text.Trim() == "")
+            {
+
+
+                ErreurPrenom.Visibility = Visibility.Visible;
+
+            }
+
+            if (tbxmatricule.Text.Trim() == "")
+            {
+
+
+                Erreurmatricule.Visibility = Visibility.Visible;
+
+            }
+
+
+
+
             GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text , tbxNomEmployer.Text, tbxPrenomEmployer.Text);
         }
     }

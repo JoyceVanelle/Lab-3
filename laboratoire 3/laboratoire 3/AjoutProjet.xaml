@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="Yellow">
+    <Grid Background="Yellow" VerticalAlignment="Stretch">
 
         <StackPanel HorizontalAlignment="Center" Margin="20">
 
@@ -16,22 +16,30 @@
 
 
             <!-- Ajout Employer -->
-            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0">
+            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0" Padding="15">
                 <TextBox x:Name="tbxNum" Header="Num Employer:"/>
-                <TextBox x:Name="tbxdeb" Header="Debut de L'Employer:"/>
+                <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
                 <TextBox x:Name="tbxbudget" Header="Budget:"/>
                 <TextBlock x:Name="tblbudget" Text="le Budget doit etre entre 10,000$ et 100,000$" Visibility="Collapsed"/>
+                <TextBox x:Name="tbxdes" Header="Description:"/>
+                <ComboBox x:Name="liste" HorizontalAlignment="Stretch" Header="Choisissez un employé" Margin="0 5 0 5">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Employe">
+                            <StackPanel>
+                                <TextBlock Text="{x:Bind Matricule,Mode=OneWay}"/>
+                                <TextBlock Text="{x:Bind Nom,Mode=OneWay}"/>
+                                <TextBlock  Text="{x:Bind Prenom,Mode=OneWay}"/>
+                            </StackPanel>
+                            
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
                 <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
 
-            <TextBlock x:Name="tblemployer" Text="Choississez un employer dans la Liste" FontSize="25" FontWeight="ExtraBold"  Margin="5,20,20,20"/>
-            <ComboBox x:Name="liste">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate x:DataType="local:Employe">
-                        <TextBlock x:Name="tbemplo" Text="{x:Bind Matricule,Mode=OneWay}"/>
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
+            
+            
 
         </StackPanel>
 

@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+ 
     <Grid Background="BlueViolet">
 
         <StackPanel HorizontalAlignment="Center" Margin="20">
@@ -15,15 +15,19 @@
             <TextBlock x:Name="titre" Text="Création d'un Employer" FontSize="25" Margin="0,0,0,15"/>
 
 
-            <!-- Ajout Employer -->
-            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="80,0,00,0">
+            <!-- Ajoute Employer -->
+            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="80,0,0,0">
                 <TextBox x:Name="tbxNomEmployer" Header="Nom Employer:"/>
+                <TextBlock  x:Name="ErreurEmployer" Text="Entrer le nom d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="tbxPrenomEmployer" Header="Prénom de L'Employer:"/>
+                <TextBlock Margin="400 10 0 10" x:Name="ErreurPrenom" Text="Entrer le prenom d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="tbxmatricule" Header="Matricule:"/>
+                <TextBlock Margin="400 10 0 10" x:Name="Erreurmatricule" Text="Entrer le Matricule de L'em^ployer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <Button x:Name="btn" Content="Ajouter Employer" Background="IndianRed" Click="btn_Click"/>
             </StackPanel>
 
         </StackPanel>
 
     </Grid>
+   
 </Page>
