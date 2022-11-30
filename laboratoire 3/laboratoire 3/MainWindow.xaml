@@ -27,7 +27,7 @@
                 <NavigationViewItemSeparator />
 
                 <NavigationViewItem Content="Projet" Tag="Projet" Icon="PhoneBook"/>
-                <NavigationViewItem Content="Recherche" Tag="Recherche" Icon="Find"/>
+                <NavigationViewItem Content="Recherche Employe" Tag="Recherche" Icon="Find"/>
 
                 <NavigationViewItemSeparator />
 
