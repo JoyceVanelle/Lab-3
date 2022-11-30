@@ -8,32 +8,31 @@ namespace laboratoire_3
 {
     internal class Projet
     {
-
         String numero;
-        DateOnly debut;
-        int budget;
+        DateTime debut;
+        double budget;
         String description;
         String employe;
         public Projet()
         {
             this.Numero = "";
-            this.Debut = new DateOnly();
-            this.Budget = 0;
+            this.Debut = new DateTime();
+            this.Budget = 0.00;
             this.Description = "";
             this.Employe = "";
         }
-        public Projet(string numero, int _adebut, int _moisdebut, int _jourdebut, int budget, string description, string employe)
+        public Projet(string numero, int _adebut, int _moisdebut, int _jourdebut, double budget, string description, string employe)
         {
             this.Numero = numero;
-            this.Debut = new DateOnly(_adebut, _moisdebut, _jourdebut);
+            this.Debut = new DateTime(_adebut, _moisdebut, _jourdebut);
             this.Budget = budget;
             this.Description = description;
             this.Employe = employe;
         }
 
         public string Numero { get => numero; set => numero = value; }
-        public DateOnly Debut { get => debut; set => debut = value; }
-        public int Budget { get => budget; set => budget = value; }
+        public DateTime Debut { get => debut; set => debut = value; }
+        public double Budget { get => budget; set => budget = value; }
         public string Description { get => description; set => description = value; }
         public string Employe { get => employe; set => employe = value; }
 
@@ -41,7 +40,6 @@ namespace laboratoire_3
         {
             return numero + " " + debut.ToString() + " " + budget + " " + description + " " + employe;
         }
-
 
     }
 }

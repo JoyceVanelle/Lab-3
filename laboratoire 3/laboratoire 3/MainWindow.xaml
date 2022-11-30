@@ -7,37 +7,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <StackPanel>
 
-    <NavigationView PaneTitle="Joyce Compagnie" PaneDisplayMode="Auto" IsSettingsVisible="False" 
+        <NavigationView PaneTitle="Joyce Compagnie" PaneDisplayMode="Auto" IsSettingsVisible="False" 
         IsBackButtonVisible="Visible"
                     SelectionChanged="NavigationView_SelectionChanged">
 
-        <NavigationView.Header>
-            <TextBlock x:Name="tblHeader">Page d'accueil</TextBlock>
-        </NavigationView.Header>
+            <NavigationView.Header>
+                <TextBlock x:Name="tblHeader">Page d'accueil</TextBlock>
+            </NavigationView.Header>
 
-        <NavigationView.MenuItems>
-            <AutoSuggestBox Width="200"  PlaceholderText="Rechercher" QueryIcon="Find"></AutoSuggestBox>
-            <NavigationViewItemHeader Content="Menu"></NavigationViewItemHeader>
+            <NavigationView.MenuItems>
+                <AutoSuggestBox Width="200"  PlaceholderText="Rechercher" QueryIcon="Find"></AutoSuggestBox>
+                <NavigationViewItemHeader Content="Menu"></NavigationViewItemHeader>
 
-            <NavigationViewItem Content="Ajout Employe" Tag="AjoutEmploye" Icon="AddFriend"/>
-            <NavigationViewItem Content="Ajout Projet" Tag="AjoutProjet" Icon="PhoneBook"/>
+                <NavigationViewItem Content="Ajout Employe" Tag="AjoutEmploye" Icon="AddFriend"/>
+                <NavigationViewItem Content="Ajout Projet" Tag="AjoutProjet" Icon="PhoneBook"/>
 
-            <NavigationViewItemSeparator />
+                <NavigationViewItemSeparator />
 
-            <NavigationViewItem Content="Projet" Tag="Projet" Icon="PhoneBook"/>
-            <NavigationViewItem Content="Recherche" Tag="Recherche" Icon="Find"/>
+                <NavigationViewItem Content="Projet" Tag="Projet" Icon="PhoneBook"/>
+                <NavigationViewItem Content="Recherche" Tag="Recherche" Icon="Find"/>
 
-            <NavigationViewItemSeparator />
+                <NavigationViewItemSeparator />
 
-        </NavigationView.MenuItems>
+            </NavigationView.MenuItems>
 
-        <NavigationView.PaneFooter>
-            <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
-        </NavigationView.PaneFooter>
+            <NavigationView.PaneFooter>
+                <NavigationViewItem Name="iDeconnexion" Content="Déconnexion" Icon="LeaveChat" />
+            </NavigationView.PaneFooter>
 
-        <Frame x:Name="mainFrame"/>
+            <Frame x:Name="mainFrame"/>
 
 
-    </NavigationView>
+        </NavigationView>
+
+    </StackPanel>
+
 </Window>

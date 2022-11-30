@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -26,6 +28,84 @@ namespace laboratoire_3
         public AjoutProjet()
         {
             this.InitializeComponent();
+            liste.ItemsSource = GestionBD.getInstance().AffficheComboBox();
+            calendar.MaxDate = new DateTimeOffset(new DateTime(2023, 12, 1));
+            calendar.MinDate = new DateTimeOffset(new DateTime(2022, 12, 1));
+        }
+
+        private void btnvalider_Click(object sender, RoutedEventArgs e)
+        {
+
+            Double budget = 0;
+            DateTime d = new DateTime();
+            int valide = 0;
+
+            if (tbxNum.Text.Trim() == "")
+            {
+
+
+                ErreurNum.Visibility = Visibility.Visible;
+
+            }
+
+           if (tbxbudget.Text.Trim() == null)
+            {
+
+
+               ErreurBudget.Visibility = Visibility.Visible;
+                valide += 1;
+
+            }
+
+            if (tbxdes.Text.Trim() == "")
+            {
+
+
+                Erreurdes.Visibility = Visibility.Visible;
+
+            }
+           
+
+            if (liste.Text.Trim() == "")
+            {
+                ErreurEmployer.Visibility = Visibility.Visible;
+            }
+
+            try
+            {
+                budget = Double.Parse(tbxbudget.Text);
+                if (budget < 10000 || budget > 100000)
+                {
+                    tblbudget.Visibility = Visibility.Visible;
+                }
+            }
+            catch(Exception ex)
+            {
+                ErreurBudget.Visibility = Visibility.Visible;
+                valide++;
+            }
+
+
+            try
+            {
+                d = calendar.Date.Value.Date;
+            }
+            catch (InvalidOperationException ex)
+            {
+                ErreurCalendar.Visibility = Visibility.Visible;
+                valide += 1;
+            }
+
+            
+            if(valide == 0)
+            {
+                Employe emp = liste.SelectedItem as Employe;
+
+                GestionBD.getInstance().AjouterProjet(tbxNum.Text, d, budget,tbxdes.Text, emp.Matricule);
+            }
+            
+
+          
         }
     }
 }

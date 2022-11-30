@@ -37,4 +37,3 @@ namespace laboratoire_3
         }
     }
 }
-
