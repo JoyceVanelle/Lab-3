@@ -10,13 +10,13 @@
  
     <Grid >
 
-        <StackPanel HorizontalAlignment="Center" Margin="20">
+        <StackPanel  HorizontalAlignment="Center" Margin="20">
 
             <TextBlock x:Name="titre" Text="Création d'un Employer" FontSize="25" Margin="0,0,0,15"/>
 
 
             <!-- Ajoute Employer -->
-            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="80,0,0,0">
+            <StackPanel x:Name="formEmployer1" Background="AliceBlue" Margin="80,0,0,0" Visibility="Visible">
                 <TextBox x:Name="tbxNomEmployer" Header="Nom Employer:"/>
                 <TextBlock  x:Name="ErreurEmployer" Text="Entrer le nom d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <TextBox x:Name="tbxPrenomEmployer" Header="Prénom de L'Employer:"/>
@@ -25,6 +25,7 @@
                 <TextBlock  x:Name="Erreurmatricule" Text="Entrer le Matricule de L'employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <Button x:Name="btn" Content="Ajouter Employer" Background="IndianRed" Click="btn_Click"/>
             </StackPanel>
+            <TextBlock x:Name="validation2" Text="Ajout d'employé Réussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
 
         </StackPanel> 
 

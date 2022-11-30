@@ -61,7 +61,8 @@ namespace laboratoire_3
             if (valide == 0)
             {
                 GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text, tbxNomEmployer.Text, tbxPrenomEmployer.Text);
-
+                formEmployer1.Visibility = Visibility.Collapsed;
+                validation2.Visibility = Visibility.Visible;
             }
                 
 
