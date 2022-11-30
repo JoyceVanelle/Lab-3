@@ -55,7 +55,6 @@ namespace laboratoire_3
 
 
 
-
             GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text , tbxNomEmployer.Text, tbxPrenomEmployer.Text);
         }
     }

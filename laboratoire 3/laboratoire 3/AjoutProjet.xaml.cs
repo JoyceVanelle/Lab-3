@@ -29,12 +29,16 @@ namespace laboratoire_3
         {
             this.InitializeComponent();
             liste.ItemsSource = GestionBD.getInstance().AffficheComboBox();
+            calendar.MaxDate = new DateTimeOffset(new DateTime(2022, 12, 1));
+            calendar.MinDate = new DateTimeOffset(new DateTime(2021, 1, 1));
         }
 
         private void btnvalider_Click(object sender, RoutedEventArgs e)
         {
 
-           
+            Double budget = 0;
+            DateTime d = new DateTime();
+            int valide = 0;
 
             if (tbxNum.Text.Trim() == "")
             {
@@ -49,6 +53,7 @@ namespace laboratoire_3
 
 
                ErreurBudget.Visibility = Visibility.Visible;
+                valide += 1;
 
             }
 
@@ -69,29 +74,42 @@ namespace laboratoire_3
 
             if (liste.Text.Trim() == "")
             {
-
-
                 ErreurEmployer.Visibility = Visibility.Visible;
-
             }
 
-
-            Double budget = Double.Parse(tbxbudget.Text);
-
-
-            if (budget < 10000 || budget > 100000)
+            try
             {
-                tblbudget.Visibility = Visibility.Visible;
+                budget = Double.Parse(tbxbudget.Text);
+                if (budget < 10000 || budget > 100000)
+                {
+                    tblbudget.Visibility = Visibility.Visible;
+                }
+            }
+            catch(Exception ex)
+            {
+                ErreurBudget.Visibility = Visibility.Visible;
+                valide++;
             }
 
 
-            DateTime d = calendar.Date.Value.Date;
-           calendar.MaxDate = new DateTimeOffset(new DateTime(2022, 12, 1));
-            calendar.MinDate = new DateTimeOffset(new DateTime(2021, 1, 1));
+            try
+            {
+                d = calendar.Date.Value.Date;
+            }
+            catch (InvalidOperationException ex)
+            {
+                ErreurCalendar.Visibility = Visibility.Visible;
+                valide += 1;
+            }
 
-            Employe emp = liste.SelectedItem as Employe;
+            
+            if(valide == 0)
+            {
+                Employe emp = liste.SelectedItem as Employe;
 
-            GestionBD.getInstance().AjouterProjet(tbxNum.Text, d, budget,tbxdes.Text, emp.Matricule);
+                GestionBD.getInstance().AjouterProjet(tbxNum.Text, d, budget,tbxdes.Text, emp.Matricule);
+            }
+            
 
           
         }

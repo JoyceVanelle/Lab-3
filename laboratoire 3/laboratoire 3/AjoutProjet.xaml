@@ -17,7 +17,7 @@
 
             <!-- Ajout Employer -->
             <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0" Padding="15">
-                <TextBox x:Name="tbxNum" Header="Num Employer:"/>
+                <TextBox x:Name="tbxNum" Header="Num Projet:"/>
                 <TextBlock  x:Name="ErreurNum" Text="Entrer le Num d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
                 <TextBlock  x:Name="ErreurCalendar" Text="Entrer une date"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
