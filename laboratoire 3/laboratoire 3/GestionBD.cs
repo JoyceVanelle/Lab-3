@@ -94,16 +94,16 @@ namespace laboratoire_3
         }
         public ObservableCollection<Projet> RechercheProjet(DateTime debut)
         {
-
+            liste.Clear();
             try
             {
-               // liste.Clear();// pour vider la liste
+              
 
-                MySqlCommand commande = new MySqlCommand("Rechercher_Projet(debut)");
+                MySqlCommand commande = new MySqlCommand("Rechercher_Projet");
                 commande.Connection = con;// indique le chemin à commande 
                 commande.CommandType = System.Data.CommandType.StoredProcedure;
 
-                //commande.Parameters.AddWithValue("@debut", debut);// met l'id dans l'espace qui lui a été réservé
+                commande.Parameters.AddWithValue("@datedeb", debut.ToString("yyyy-MM-dd"));// met l'id dans l'espace qui lui a été réservé
               
                
 
