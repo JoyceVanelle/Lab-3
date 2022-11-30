@@ -43,6 +43,9 @@ namespace laboratoire_3
                 case "Projet":
                     mainFrame.Navigate(typeof(AfficheRechercheProjet));
                     break;
+                case "Recherche":
+                    mainFrame.Navigate(typeof(RechercheEmploye));
+                    break;
                 default:
                     break;
 

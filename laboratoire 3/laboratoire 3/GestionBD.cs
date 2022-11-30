@@ -265,7 +265,7 @@ namespace laboratoire_3
 
             MySqlCommand commande = new MySqlCommand();
             commande.Connection = con;
-            commande.CommandText = "Select * from employe where nom like '%" + varRech + "%'";
+            commande.CommandText = "Select * from employec where nom like '%" + varRech + "%'";
 
             con.Open();
             MySqlDataReader r = commande.ExecuteReader();
