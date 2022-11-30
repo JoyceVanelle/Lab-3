@@ -259,5 +259,27 @@ namespace laboratoire_3
             return liste;
         }
 
+        public ObservableCollection<Employe> GetEmployes(string varRech)
+        {
+            listeEmployes.Clear();
+
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "Select * from employe where nom like '%" + varRech + "%'";
+
+            con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
+
+            while (r.Read())
+            {
+
+                listeEmployes.Add(new Employe(r.GetString(0), r.GetString(1), r.GetString(2)));
+            }
+            r.Close();
+            con.Close();
+
+            return listeEmployes;
+        }
+
     }
 }
