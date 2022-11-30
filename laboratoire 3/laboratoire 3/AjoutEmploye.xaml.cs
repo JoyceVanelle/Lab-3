@@ -61,6 +61,7 @@ namespace laboratoire_3
             if (valide == 0)
             {
                 GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text, tbxNomEmployer.Text, tbxPrenomEmployer.Text);
+
             }
                 
 
