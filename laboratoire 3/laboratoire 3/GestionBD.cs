@@ -18,7 +18,7 @@ namespace laboratoire_3
         static GestionBD gestionBD = null;// ce qui crée le singleton pour avoir un seul objet à utiliser
         public GestionBD()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2;Uid=2014985;Pwd=2014985;");
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2_2014985-sorelle-francine-matho-ngoualadjo;Uid=2014985;Pwd=2014985;");
             liste = new ObservableCollection<Projet>();
 
         }
@@ -35,7 +35,7 @@ namespace laboratoire_3
             {
                liste.Clear();// pour vider la liste
 
-                MySqlCommand commande = new MySqlCommand("AfficheNomComplet");
+                MySqlCommand commande = new MySqlCommand("AfficherNomComplet");
                 commande.Connection = con;// indique le chemin à commande 
                 commande.CommandType = System.Data.CommandType.StoredProcedure;
                
@@ -48,13 +48,20 @@ namespace laboratoire_3
                 while (r.Read())
                    
                 {
-                    DateOnly d = new DateOnly();
-                    DateTime dateTime = r.GetDateTime("debut");
 
-                    d.AddYears(dateTime.Year);
-                    d.AddMonths(dateTime.Month);
-                    d.AddDays(dateTime.Day);
+                    DateTime d = r.GetDateTime("debut");
 
+                    d.AddYears(d.Year);
+                    d.AddMonths(d.Month);
+                    d.AddDays(d.Day);
+                    /*
+                                        DateOnly d = new DateOnly();
+                                        DateTime dateTime = r.GetDateTime("debut");
+
+                                        d.AddYears(dateTime.Year);
+                                        d.AddMonths(dateTime.Month);
+                                        d.AddDays(dateTime.Day);
+                    */
                     liste.Add(new Projet()
                     {
                         Numero = r.GetString(0),
@@ -66,7 +73,7 @@ namespace laboratoire_3
                         PrenomEmploye = r.GetString(6),
 
                     });
-
+                   
                     
                 }
 
@@ -85,5 +92,70 @@ namespace laboratoire_3
             }
             return liste;
         }
+        public ObservableCollection<Projet> RechercheProjet(DateTime debut)
+        {
+
+            try
+            {
+               // liste.Clear();// pour vider la liste
+
+                MySqlCommand commande = new MySqlCommand("Rechercher_Projet(debut)");
+                commande.Connection = con;// indique le chemin à commande 
+                commande.CommandType = System.Data.CommandType.StoredProcedure;
+
+                //commande.Parameters.AddWithValue("@debut", debut);// met l'id dans l'espace qui lui a été réservé
+              
+               
+
+
+                con.Open();// ouvre la connection 
+                //commande.Prepare();// empêche les caractères spéciaux donc prends tout ca comme chaine de caractères
+                int i = commande.ExecuteNonQuery();
+                MySqlDataReader r = commande.ExecuteReader();// permet de lire le retour qui ewst stocké dans r
+
+                //   public static bool TryParseExact(string? s, string? format, out DateOnly result);
+                
+                while (r.Read())
+
+                {
+      
+
+                    /* DateOnly d = new DateOnly();
+                     DateTime dateTime = r.GetDateTime("debut");
+
+                     d.AddYears(dateTime.Year);
+                     d.AddMonths(dateTime.Month);
+                     d.AddDays(dateTime.Day);
+ */
+                   liste.Add(new Projet()
+                    {
+                        Numero = r.GetString(0),
+                        Debut = r.GetDateTime("debut"),
+                        Budget = r.GetInt32(2),
+                        Description = r.GetString(3),
+                        Employe = r.GetString(4),
+                        NomEmploye = r.GetString(5),
+                        PrenomEmploye = r.GetString(6),
+
+                    });
+                   
+                    
+
+                }
+
+
+                r.Close();
+                con.Close();
+            }
+
+            catch (MySqlException ex)
+            {
+                if (con.State == System.Data.ConnectionState.Open)
+                    con.Close();
+            }
+            return liste;
+        }
+
+    
     }
 }

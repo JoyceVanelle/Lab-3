@@ -10,7 +10,7 @@ namespace laboratoire_3
     {
 
         String numero ;
-        DateOnly debut;
+        DateTime debut;
         int budget;
         String description;
         String employe;
@@ -19,7 +19,7 @@ namespace laboratoire_3
         public Projet()
         {
             this.Numero ="";
-            this.Debut = new DateOnly(); 
+            this.Debut = new DateTime(); 
             this.Budget = 0;
             this.Description = "";
             this.Employe = "";
@@ -29,7 +29,7 @@ namespace laboratoire_3
         public Projet(string numero, int _adebut,int _moisdebut,int _jourdebut, int budget, string description, string employe,string nom,string prenom)
         {
             this.Numero = numero;
-            this.Debut = new DateOnly(_adebut,_moisdebut,_jourdebut);
+            this.Debut = new DateTime(_adebut,_moisdebut,_jourdebut);
             this.Budget = budget;
             this.Description = description;
             this.Employe = employe;
@@ -38,7 +38,7 @@ namespace laboratoire_3
         }
 
         public string Numero { get => numero; set => numero = value; }
-        public DateOnly Debut { get => debut; set => debut = value; }
+        public DateTime Debut { get => debut; set => debut = value; }
         public int Budget { get => budget; set => budget = value; }
         public string Description { get => description; set => description = value; }
         public string Employe { get => employe; set => employe = value; }

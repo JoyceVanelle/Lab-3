@@ -7,6 +7,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -30,6 +31,12 @@ namespace laboratoire_3
 
 
         }
+        
 
+        private void Rechercher_Click(object sender, RoutedEventArgs e)
+        {
+            DateTime d = calendar1.Date.Value.DateTime;
+            lvListe.ItemsSource = GestionBD.getInstance().RechercheProjet(d);
+        }
     }
 }

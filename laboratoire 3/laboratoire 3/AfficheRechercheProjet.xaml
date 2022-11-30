@@ -9,6 +9,20 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" x:Name="tbtexte" Text="Liste des Projets"  FontSize="25"></TextBlock>
+           
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text=""  Margin="5,5,5,10">
+
+            </TextBlock>
+            <CalendarDatePicker x:Name="calendar1" HorizontalAlignment="Stretch" Header="veiller choisir la date de debut du projet recherché"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center">
+            <Button x:Name="Rechercher" Click="Rechercher_Click" Content="Rechercher"></Button>
+            
+        </StackPanel>
         <GridView x:Name="lvListe"   >
 
             <GridView.ItemTemplate>
