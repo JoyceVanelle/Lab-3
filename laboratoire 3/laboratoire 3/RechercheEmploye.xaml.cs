@@ -28,11 +28,10 @@ namespace laboratoire_3
             this.InitializeComponent();
         }
 
-
         private void btRechercher_Click(object sender, RoutedEventArgs e)
         {
 
-            lv.ItemsSource= GestionBD.getInstance().GetEmployes(valRech.Text); 
+            lv.ItemsSource = GestionBD.getInstance().GetEmployes(valRech.Text);
         }
     }
 }
