@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Cms;
 using Org.BouncyCastle.Asn1.X509;
 using System;
@@ -28,6 +29,32 @@ namespace laboratoire_3
 
             return gestionBD;
         }
+
+        public ObservableCollection<Employe> GetEmployes(string varRech)
+        {
+            ObservableCollection<Employe> liste = new ObservableCollection<Employe>();
+
+            MySqlCommand commande = new MySqlCommand();
+            commande.Connection = con;
+            commande.CommandText = "Select * from employe where nom like '%"+varRech+"%'";
+
+            con.Open();
+            MySqlDataReader r = commande.ExecuteReader();
+
+            while (r.Read())
+            {
+
+                liste.Add(new Employe(r.GetString(0), r.GetString(1), r.GetString(2)));
+            }
+            r.Close();
+            con.Close();
+
+            return liste;
+        }
+
+
+
+
     }
 }
 
