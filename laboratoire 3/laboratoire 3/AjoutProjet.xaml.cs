@@ -29,8 +29,8 @@ namespace laboratoire_3
         {
             this.InitializeComponent();
             liste.ItemsSource = GestionBD.getInstance().AffficheComboBox();
-            calendar.MaxDate = new DateTimeOffset(new DateTime(2022, 12, 1));
-            calendar.MinDate = new DateTimeOffset(new DateTime(2021, 1, 1));
+            calendar.MaxDate = new DateTimeOffset(new DateTime(2023, 12, 1));
+            calendar.MinDate = new DateTimeOffset(new DateTime(2022, 12, 1));
         }
 
         private void btnvalider_Click(object sender, RoutedEventArgs e)
@@ -64,13 +64,7 @@ namespace laboratoire_3
                 Erreurdes.Visibility = Visibility.Visible;
 
             }
-            //if (calendar.DataContext == null)
-            //{
-
-
-            //    ErreurCalendar.Visibility = Visibility.Visible;
-
-            //}
+           
 
             if (liste.Text.Trim() == "")
             {

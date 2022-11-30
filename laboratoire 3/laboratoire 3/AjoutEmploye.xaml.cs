@@ -30,6 +30,8 @@ namespace laboratoire_3
 
         private void btn_Click(object sender, RoutedEventArgs e)
         {
+            
+
             if (tbxNomEmployer.Text.Trim() == "")
             {
 
@@ -53,9 +55,9 @@ namespace laboratoire_3
 
             }
 
+            GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text, tbxNomEmployer.Text, tbxPrenomEmployer.Text);
 
 
-            GestionBD.getInstance().AjouterEmployer(tbxmatricule.Text , tbxNomEmployer.Text, tbxPrenomEmployer.Text);
         }
     }
 }

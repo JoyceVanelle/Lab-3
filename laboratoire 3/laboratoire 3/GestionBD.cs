@@ -16,7 +16,7 @@ namespace laboratoire_3
         static GestionBD gestionBD = null;
         public GestionBD()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2;Uid=2014985;Pwd=2014985;");
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2_2014985-sorelle-francine-matho-ngoualadjo;Uid=2014985;Pwd=2014985;");
             liste = new ObservableCollection<Employe>();
 
         }
@@ -36,7 +36,7 @@ namespace laboratoire_3
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
                 /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
-                commande.CommandText = "insert into employe values( @matricule, @nom, @prenom) ";
+                commande.CommandText = "insert into employec values(@matricule,@nom,@prenom) ";
 
                 //commande.Parameters.AddWithValue("@id", id);
                 commande.Parameters.AddWithValue("@matricule", matricule);
@@ -66,11 +66,11 @@ namespace laboratoire_3
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
                 /// commande.CommandText = "insert into clients values(10,'doe','john','mail@mail.com')";
-                commande.CommandText = "insert into projet values( @numero, @date, @budget, @description ,@employe) ";
+                commande.CommandText = "insert into projetc values( @numero, @date, @budget, @description, @employe) ";
 
                 //commande.Parameters.AddWithValue("@id", id);
                 commande.Parameters.AddWithValue("@numero", numero);
-                commande.Parameters.AddWithValue("@date", date);
+                commande.Parameters.AddWithValue("@date", date.ToString("yyyy/MM/dd"));
                 commande.Parameters.AddWithValue("@budget", budget);
                 commande.Parameters.AddWithValue("@description", description);
                 commande.Parameters.AddWithValue("@employe", employe);
@@ -98,7 +98,7 @@ namespace laboratoire_3
 
                 MySqlCommand commande = new MySqlCommand();
                 commande.Connection = con;
-                commande.CommandText = "select * from employe";
+                commande.CommandText = "select * from employec";
                
                 con.Open();
                 MySqlDataReader r = commande.ExecuteReader();
