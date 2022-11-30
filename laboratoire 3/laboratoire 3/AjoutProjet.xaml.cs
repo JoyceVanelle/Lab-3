@@ -45,6 +45,7 @@ namespace laboratoire_3
 
 
                 ErreurNum.Visibility = Visibility.Visible;
+                valide += 1;
 
             }
 

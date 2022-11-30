@@ -27,7 +27,7 @@ namespace laboratoire_3
         }
         public static GestionBD getInstance()// rapport avec le singleton
         {
-            if (gestionBD == null)
+             if (gestionBD == null)
                 gestionBD = new GestionBD();
 
             return gestionBD;
