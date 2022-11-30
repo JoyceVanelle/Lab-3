@@ -42,7 +42,7 @@
 
                 <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
-            <TextBlock x:Name="validation" Text="Ajout Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
+            <TextBlock x:Name="validation" Text="Ajout de Projet Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
 
             
             
