@@ -26,6 +26,7 @@ namespace laboratoire_3
         public MainWindow()
         {
             this.InitializeComponent();
+            mainFrame.Navigate(typeof(AfficheRechercheProjet));
         }
 
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
