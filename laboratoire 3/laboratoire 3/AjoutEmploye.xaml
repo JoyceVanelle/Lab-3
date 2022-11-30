@@ -8,7 +8,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
  
-    <Grid Background="BlueViolet">
+    <Grid >
 
         <StackPanel HorizontalAlignment="Center" Margin="20">
 
