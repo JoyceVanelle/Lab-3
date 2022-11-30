@@ -16,7 +16,7 @@
 
 
             <!-- Ajout Employer -->
-            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0" Padding="15">
+            <StackPanel x:Name="formEmployer" Background="AliceBlue" Margin="20,0,00,0" Padding="15" Visibility="Visible">
                 <TextBox x:Name="tbxNum" Header="Num Projet:"/>
                 <TextBlock  x:Name="ErreurNum" Text="Entrer le Num d'un Employer"  FontFamily="Algerian" Foreground="Red" Visibility="Collapsed"></TextBlock>
                 <CalendarDatePicker x:Name="calendar" HorizontalAlignment="Stretch" Header="Choisissez une date"/>
@@ -42,6 +42,7 @@
 
                 <Button x:Name="btnvalider" Content="Valider" Background="yellow" Margin="120,20,20,20" Click="btnvalider_Click"/>
             </StackPanel>
+            <TextBlock x:Name="validation" Text="Ajout Reussi!" FontSize="25" Visibility="Collapsed"></TextBlock>
 
             
             

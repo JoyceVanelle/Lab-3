@@ -102,6 +102,8 @@ namespace laboratoire_3
                 Employe emp = liste.SelectedItem as Employe;
 
                 GestionBD.getInstance().AjouterProjet(tbxNum.Text, d, budget,tbxdes.Text, emp.Matricule);
+                formEmployer.Visibility=Visibility.Collapsed;
+                validation.Visibility=Visibility.Visible;
             }
             
 
