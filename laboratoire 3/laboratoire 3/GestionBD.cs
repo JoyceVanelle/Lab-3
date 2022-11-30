@@ -17,7 +17,7 @@ namespace laboratoire_3
         static GestionBD gestionBD = null;
         public GestionBD()
         {
-            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2;Uid=2014985;Pwd=2014985;");
+            con = new MySqlConnection("Server=cours.cegep3r.info;Database=a2022_420326ri_gr2_2014985-sorelle-francine-matho-ngoualadjo;Uid=2014985;Pwd=2014985;");
             liste = new ObservableCollection<Projet>();
 
         }
